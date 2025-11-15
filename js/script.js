@@ -19,4 +19,22 @@ function getComputerChoice(){
     return compChoice;
 }
 
-console.log(getComputerChoice());
+// this function returns the choice of the human.
+function getHumanChoice(){
+    let humanNum = window.prompt("enter a value (-1 : rock, 0 : paper or 1 : scissor)");
+    let humanChoice = "";
+    if (humanNum == -1){
+        humanChoice = "Rock";
+    }
+    else if (humanNum == 0){
+        humanChoice = "Paper";
+    }
+    else {
+        humanChoice = "Scissor";
+    }
+
+    return humanChoice;
+}
+
+console.log("Computer Choice: ", getComputerChoice());
+console.log("Human Choice: ", getHumanChoice());
