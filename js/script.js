@@ -1,4 +1,4 @@
-console.log("Hello World");
+console.log("Let's play rock and scissor. Click the button to play.");
 // Rock paper scissors game.
 
 // this function returns the chioce of the computer.
@@ -56,5 +56,3 @@ function playGame(){
         console.log("Computer Choice: ", compChoice, "\nHuman Choice: ", humanChoice, "\nComputer Score:", compScore, "\nYour Score:", humanScore);
     }
 }
-
-playGame();
