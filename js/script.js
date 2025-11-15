@@ -25,28 +25,36 @@ function getHumanChoice(){
     return humanChoice.toLowerCase();
 }
 
-// initial scores of human and computer.
-let humanScore = 0;
-let compScore = 0;
+function playGame(){
+    // initial scores of human and computer.
+    let humanScore = 0;
+    let compScore = 0;
 
-// function for playing rounds.
-function playRound(compChoice, humanChoice){
-    if (compChoice == humanChoice){
-        console.log("It's a draw.");
+    // function for playing rounds.
+    function playRound(compChoice, humanChoice){
+        if (compChoice == humanChoice){
+            console.log("It's a draw.");
+        }
+        else if ((compChoice == "rock" && humanChoice == "paper") ||  
+        (compChoice == "paper" && humanChoice == "scissor") || 
+        (compChoice == "scissor" && humanChoice == "rock"))
+        {
+            console.log("You Win, Computer Loses.");
+            humanScore++;
+        }
+        else{
+            console.log("You Lose, Computer Wins.");
+            compScore++;
+        }
     }
-    else if ((compChoice == "rock" && humanChoice == "paper") ||  (compChoice == "paper" && humanChoice == "scissor") || (compChoice == "scissor" && humanChoice == "rock")){
-        console.log("You Win, Computer Loses.");
-        humanScore++;
-    }
-    else{
-        console.log("You Lose, Computer Wins.");
-        compScore++;
+
+    for(i = 0; i < 5; i++)
+    {
+        let compChoice = getComputerChoice();
+        let humanChoice = getHumanChoice();
+        playRound(compChoice, humanChoice)
+        console.log("Computer Choice: ", compChoice, "\nHuman Choice: ", humanChoice, "\nComputer Score:", compScore, "\nYour Score:", humanScore);
     }
 }
 
-let compChoice = getComputerChoice();
-let humanChoice = getHumanChoice();
-playRound(compChoice, humanChoice)
-console.log("Computer Choice: ", compChoice);
-console.log("Human Choice: ", humanChoice);
-console.log("Computer Score:", compScore, "\nYour Score:", humanScore);
+playGame();
