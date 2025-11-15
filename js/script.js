@@ -26,6 +26,7 @@ function getHumanChoice(){
 }
 
 function playGame(){
+    console.log("------------------------------Game Starting------------------------------");
     // initial scores of human and computer.
     let humanScore = 0;
     let compScore = 0;
