@@ -21,17 +21,7 @@ function getComputerChoice(){
 
 // this function returns the choice of the human.
 function getHumanChoice(){
-    let humanNum = window.prompt("enter a value (-1 : rock, 0 : paper or 1 : scissor)");
-    let humanChoice = "";
-    if (humanNum == -1){
-        humanChoice = "Rock";
-    }
-    else if (humanNum == 0){
-        humanChoice = "Paper";
-    }
-    else {
-        humanChoice = "Scissor";
-    }
+    let humanChoice = window.prompt("enter a value (rock, paper or scissor)");
 
     return humanChoice;
 }
